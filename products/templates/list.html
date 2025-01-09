@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block header %}Products{% endblock %}
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Class</th>
+            <th scope="col">Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <th scope="row">{{product.id}}</th>
+            <td>{{product.name}}</td>
+            <td>{{product.clas}}</td>
+            <td>
+                <a href="/products/detailsProduct/{{product.id}}" class="btn btn-outline-dark"><i class="bi bi-eye"></i></a>
+                <a href="/products/editProduct/{{product.id}}" class="btn btn-outline-dark"><i class="bi bi-pencil"></i></a>
+                <a href="/products/delete/{{product.id}}" class="btn btn-outline-dark"><i class="bi bi-trash"></i></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

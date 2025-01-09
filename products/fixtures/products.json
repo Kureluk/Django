@@ -1,0 +1,42 @@
+[
+    {
+        "pk": 1,
+        "model": "products.Product",
+        "fields": {
+            "name": "Apple",
+            "clas": "food"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.Product",
+        "fields": {
+            "name": "Apple",
+            "clas": "food"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.Product",
+        "fields": {
+            "name": "Apple",
+            "clas": "food"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.Product",
+        "fields": {
+            "name": "Apple",
+            "clas": "food"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.Product",
+        "fields": {
+            "name": "Apple",
+            "clas": "food"
+        }
+    }
+]

@@ -57,6 +57,3 @@ def delete(request, id):
 
     return redirect("/users/home")
 
-
-def about(request):
-    return HttpResponse("<h1>About Page!</h1>")
