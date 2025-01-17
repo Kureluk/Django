@@ -43,6 +43,13 @@
         <h1>{% block header %}Title{% endblock %}</h1>
 
         <main>
+            {% if return_url %}
+            <div>
+                <a href="{{return_url}}" class="btn btn-outline-dark">
+                    <i class="bi bi-arrow-left"></i>
+                </a>
+            </div>
+            {% endif %}
             {% block content %}
             <p>Main Content</p>
             {% endblock %}

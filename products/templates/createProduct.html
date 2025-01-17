@@ -3,7 +3,7 @@
 {% block header %}Create product{% endblock %}
 
 {% block content %}
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
 
     <div class="mb-3">
@@ -14,8 +14,14 @@
         <label class="form-label">Class</label>
         <input type="text" name="clas" class="form-control" placeholder="Enter class">
     </div>
-
-    <button class="btn btn-success">Create</button>
+    <div>
+        <label class="form-label">Photo</label>
+        <input type="file" name="photo" class="form-control">
+    </div>
+    <div>
+        <button class="btn btn-success">Create</button>    
+    </div>
+   
 
 </form>
 

@@ -12,7 +12,7 @@ def list(request):
 def details(request, id):
     product = Product.objects.get(id=id)
 
-    return render(request, "detailsProduct.html", {"product": product})
+    return render(request, "detailsProduct.html", {"product": product, "return_url": "/products"})
 
 
 def delete(request, id):
@@ -28,13 +28,13 @@ def create(request):
     form = CreateProduct()
 
     if request.method == "POST":
-        form = CreateProduct(request.POST)
+        form = CreateProduct(request.POST, request.FILES)
 
         if form.is_valid():
             form.save()
             return redirect("/products")
 
-    return render(request, "createProduct.html", {"form": form})
+    return render(request, "createProduct.html", {"form": form, "return_url": "/products"})
 
 
 def edit(request, id):
@@ -52,4 +52,4 @@ def edit(request, id):
             form.save()
             return redirect("/products")
 
-    return render(request, "editProduct.html", {"form": form})
+    return render(request, "editProduct.html", {"form": form, "return_url": "/products"})

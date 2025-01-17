@@ -1,31 +1,40 @@
 {% extends 'layout.html' %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/product.css' %}">
+
 
 {% block header %}Products{% endblock %}
 
 {% block content %}
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Class</th>
-            <th scope="col">Edit</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 user-catalog">
         {% for product in products %}
-        <tr>
-            <th scope="row">{{product.id}}</th>
-            <td>{{product.name}}</td>
-            <td>{{product.clas}}</td>
-            <td>
-                <a href="/products/detailsProduct/{{product.id}}" class="btn btn-outline-dark"><i class="bi bi-eye"></i></a>
-                <a href="/products/editProduct/{{product.id}}" class="btn btn-outline-dark"><i class="bi bi-pencil"></i></a>
-                <a href="/products/delete/{{product.id}}" class="btn btn-outline-dark"><i class="bi bi-trash"></i></a>
-            </td>
-        </tr>
+        <div class="col">
+            <div class="card h-100">
+                {% if product.photo %}
+                <img src="{{ product.photo.url }}" class="card-img-top" alt="{{ product.name }}">
+                {% else %}
+                <img src="/media/media/apple.jpg" class="card-img-top" alt="{{ product.name }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.clas }}</p>
+                </div>
+                <div class="card-body">
+                    <a href="/products/detailsProduct/{{ product.id }}" class="btn btn-outline-dark">
+                        <i class="bi bi-eye"></i> View
+                    </a>
+                    <a href="/products/editProduct/{{ product.id }}" class="btn btn-outline-dark">
+                        <i class="bi bi-pencil"></i> Edit
+                    </a>
+                    <a href="/products/delete/{{ product.id }}" class="btn btn-outline-dark">
+                        <i class="bi bi-trash"></i> Delete
+                    </a>
+                </div>
+            </div>
+        </div>
         {% endfor %}
-    </tbody>
-</table>
-
+    </div>
+</div>
 {% endblock %}

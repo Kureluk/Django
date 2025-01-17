@@ -17,6 +17,9 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
+from django.conf.urls.static import static
+
+from first_app import settings
 
 
 urlpatterns = [
@@ -24,3 +27,6 @@ urlpatterns = [
     path("users/", include("users.urls")),
     path("products/", include("products.urls")),
 ]
+
+if settings.DEBUG:  # Only serve media files in development
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
