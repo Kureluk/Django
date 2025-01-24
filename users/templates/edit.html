@@ -8,23 +8,19 @@
 
     <div class="mb-3">
         <label class="form-label">Name</label>
-        <input type="text" value={{form.name.value}} name="name" class="form-control" placeholder="Enter name">
+        <input type="text" value={{form.name.value}} name="name" class="form-control" placeholder="Enter name" id="name">
     </div>
     <div class="mb-3">
         <label class="form-label">Email</label>
-        <input type="email" value={{form.email.value}} name="email" class="form-control" placeholder="Enter email">
+        <input type="email" value={{form.email.value}} name="email" class="form-control" placeholder="Enter email" id="email" >
     </div>
     <div class="mb-3">
-        <label class="form-label">Birthdate</label>
-        <input type="date" value={{form.birthdate.value | date:"Y-m-d"}} name="birthdate" class="form-control"
-            placeholder="Enter birthdate">
+        <label class="form-label">Password</label>
+        <input type="password" value={{form.password.value}} name="password" class="form-control " id="password" 
+            placeholder="Enter password">
     </div>
-    <div class="mb-3">
-        <label class="form-label">Username</label>
-        <input type="username" value={{form.username.value}} name="username" class="form-control"
-            placeholder="Enter username">
-    </div>
-
+    <input type="hidden" name="role" value="user">
+    
     <button class="btn btn-success">Edit</button>
 
 </form>

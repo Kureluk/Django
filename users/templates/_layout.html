@@ -16,7 +16,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Users</a>
+            <a class="navbar-brand" href="/users/home">Users</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -25,16 +25,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/users/home">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/products">Products</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/admin">Admin</a>
+                    </li>
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="/users/create/">Create User</a>
+                    </li> -->
+                </ul>
+                <ul class="navbar-nav  mb-2 mb-lg-0 d-flex">
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="/users/login">Log in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/users/create">Sign up</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </nav>
