@@ -1,8 +1,6 @@
 {% extends 'layout.html' %}
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'css/product.css' %}">
-
 
 {% block header %}Products{% endblock %}
 
@@ -25,14 +23,8 @@
                     <a href="/products/detailsProduct/{{ product.id }}" class="btn btn-outline-dark">
                         <i class="bi bi-eye"></i> View
                     </a>
-                    <a href="/products/editProduct/{{ product.id }}" class="btn btn-outline-dark">
-                        <i class="bi bi-pencil"></i> Edit
-                    </a>
                     <a href="/products/delete/{{ product.id }}" class="btn btn-outline-dark">
                         <i class="bi bi-trash"></i> Delete
-                    </a>
-                    <a href="/cart/add/{{product.id}}" class="btn btn-outline-dark">
-                        <i class="bi bi-cart"></i>
                     </a>
                 </div>
             </div>

@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 
 from products.models import Product
@@ -20,6 +21,7 @@ def delete(request, id):
 
     if product is not None:
         product.delete()
+        messages.success(request, "User deleted successfully!")
 
     return redirect("/products")
 
@@ -32,7 +34,10 @@ def create(request):
 
         if form.is_valid():
             form.save()
+            messages.success(request, "User created successfully!")
             return redirect("/products")
+        else:
+            messages.error(request, "Invalid data!")
 
     return render(request, "createProduct.html", {"form": form, "return_url": "/products"})
 
@@ -50,6 +55,7 @@ def edit(request, id):
 
         if form.is_valid():
             form.save()
+            messages.success(request, "User changed successfully!")
             return redirect("/products")
 
     return render(request, "editProduct.html", {"form": form, "return_url": "/products"})
