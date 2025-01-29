@@ -1,14 +1,17 @@
 from django import forms
-from users.models import User
+from users.models import Users
 
 
 class CreateUser(forms.ModelForm):
     class Meta:
-        model = User
+        model = Users
         fields = "__all__"
 
 
 class EditUser(forms.ModelForm):
     class Meta:
-        model = User
+        model = Users
         fields = "__all__"
+
+
+

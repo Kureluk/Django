@@ -1,5 +1,7 @@
 from django.contrib import messages
+from django.forms import model_to_dict
 from django.shortcuts import render, redirect
+
 
 from products.models import Product
 from products.forms import CreateProduct, EditProduct
@@ -13,7 +15,12 @@ def list(request):
 def details(request, id):
     product = Product.objects.get(id=id)
 
-    return render(request, "detailsProduct.html", {"product": product, "return_url": "/products"})
+    return render(request, "detailsProduct.html", {
+        "product": {
+            **model_to_dict(product),
+            "categoryName": Product.CATEGORY_CHOICES[product.category][1],
+        }, 
+        "return_url": "/products"})
 
 
 def delete(request, id):
